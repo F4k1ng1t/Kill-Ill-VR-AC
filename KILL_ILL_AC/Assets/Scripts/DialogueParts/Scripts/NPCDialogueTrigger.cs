@@ -1,0 +1,50 @@
+using UnityEngine;
+
+public class NPCDialogueTrigger : MonoBehaviour
+{
+    public DialogueManager dialogueManager;
+    public DialogueNode startNode;
+
+    private bool playerInRange = false;
+    private XRInputActions inputActions;
+
+    void Awake()
+    {
+        inputActions = new XRInputActions();
+    }
+
+    void OnEnable()
+    {
+        inputActions.Enable();
+    }
+
+    void OnDisable()
+    {
+        inputActions.Disable();
+    }
+
+    void Update()
+    {
+        // A button pressed while near NPC
+        if (playerInRange && inputActions.Gameplay.Interact.triggered)
+        {
+            dialogueManager.StartDialogue(startNode);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
+}

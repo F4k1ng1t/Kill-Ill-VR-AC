@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70e9c25713cd294198c7e730da80e6e, type: 3}
+  m_Name: Node5
+  m_EditorClassIdentifier: 
+  dialogueText: Well... There is one thing... Around the time the headache happened
+    I started hearing voices in my head.
+  choices:
+  - choiceText: Interesting... Come see me at the clinic
+    nextNode: {fileID: 11400000, guid: 329b8d7a9cb12664b8529d4f684cc243, type: 2}
+  - choiceText: Eh, probably unrelated
+    nextNode: {fileID: 11400000, guid: fa8d61b604242634e9c2d151c2f85618, type: 2}
