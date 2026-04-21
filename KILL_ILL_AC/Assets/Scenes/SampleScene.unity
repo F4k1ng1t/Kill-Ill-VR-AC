@@ -1219,6 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonPrefab: {fileID: 8691701065967024199, guid: c5781df411e30924db173be510b49f84, type: 3}
+  dialogueRunning: 0
 --- !u!4 &936584867
 Transform:
   m_ObjectHideFlags: 0
