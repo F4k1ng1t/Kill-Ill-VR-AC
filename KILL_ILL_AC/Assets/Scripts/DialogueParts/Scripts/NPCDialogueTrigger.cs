@@ -4,6 +4,7 @@ public class NPCDialogueTrigger : MonoBehaviour
 {
     public DialogueManager dialogueManager;
     public DialogueNode startNode;
+    NPCInfo NPC;
 
     private bool playerInRange = false;
     private XRInputActions inputActions;
@@ -11,6 +12,13 @@ public class NPCDialogueTrigger : MonoBehaviour
     void Awake()
     {
         inputActions = new XRInputActions();
+    }
+    private void Start()
+    {
+        if (this.GetComponent<NPCInfo>() != null)
+            NPC = this.GetComponent<NPCInfo>();
+        else
+            Debug.Log("ts not on here gng *wilted rose emoji*");
     }
 
     void OnEnable()
@@ -28,7 +36,7 @@ public class NPCDialogueTrigger : MonoBehaviour
         // A button pressed while near NPC
         if (playerInRange && inputActions.Gameplay.Interact.triggered)
         {
-            dialogueManager.StartDialogue(startNode);
+            dialogueManager.InitializeNPCForDialogue(NPC, startNode);
         }
     }
 
