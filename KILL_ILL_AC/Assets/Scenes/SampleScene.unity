@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 1460922587}
   - component: {fileID: 1460922588}
   m_Layer: 2
-  m_Name: AttachPoint
+  m_Name: ItemAttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

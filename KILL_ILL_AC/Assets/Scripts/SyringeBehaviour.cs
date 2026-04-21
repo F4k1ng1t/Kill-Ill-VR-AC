@@ -3,21 +3,21 @@ using UnityEngine;
 public class SyringeBehaviour : MonoBehaviour
 {
     bool canInject = false;
-    NPCBehaviour npc;
+    NPCInfo npc;
     public Material blood;
     public Material infectedBlood;
     public MeshRenderer barrel;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<NPCBehaviour>() != null)
+        if (other.gameObject.GetComponent<NPCInfo>() != null)
         {
             canInject = true;
-            npc = other.gameObject.GetComponent<NPCBehaviour>();
+            npc = other.gameObject.GetComponent<NPCInfo>();
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<NPCBehaviour>() != null)
+        if (other.gameObject.GetComponent<NPCInfo>() != null)
         {
             canInject = false;
             npc = null;
