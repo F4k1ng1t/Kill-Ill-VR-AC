@@ -6,7 +6,8 @@ Kill Ill is a psychological horror social deduction game where players must unco
 
 <details>
 
-# <summary>Controls</summary>
+<summary>Controls</summary>
+
 * Left joystick to move\
 * A to Interact with NPCS\
 * Triggers to interact with items\
