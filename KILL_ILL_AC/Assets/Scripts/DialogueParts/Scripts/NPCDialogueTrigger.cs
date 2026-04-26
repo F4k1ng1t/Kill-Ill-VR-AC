@@ -33,6 +33,8 @@ public class NPCDialogueTrigger : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(playerInRange);
+        Debug.Log(inputActions.Gameplay.Interact.triggered);
         // A button pressed while near NPC
         if (playerInRange && inputActions.Gameplay.Interact.triggered && !dialogueManager.dialogueRunning)
         {

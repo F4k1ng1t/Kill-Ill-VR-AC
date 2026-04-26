@@ -19,8 +19,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "dccfe1d9-18a5-4d4d-afbf-ab1a048ec247",
-                    "path": "<XRInputV1::Valve::IndexControllerOpenXR>{RightHand}/primarybutton",
+                    "id": "eea2ab3b-1936-4363-912a-fbbe40d15246",
+                    "path": "<QuestProTouchController>/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
