@@ -10,6 +10,7 @@ public class NPCInfo : MonoBehaviour
     public GameObject ButtonLayout;
     public TextMeshProUGUI NameObject;
     public TextMeshProUGUI DialogueText;
+    public AudioSource audioSource;
 
     private void OnCollisionEnter(Collision collision)
     {

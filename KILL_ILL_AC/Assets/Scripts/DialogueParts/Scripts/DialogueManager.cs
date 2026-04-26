@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -17,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     TextMeshProUGUI Name;
     TextMeshProUGUI Dialogue;
     Transform ButtonLayout;
+    AudioSource audioSource;
 
     public void InitializeNPCForDialogue(NPCInfo NPC, DialogueNode startNode)
     {
@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
         Name.text = NPC.Name;
         Dialogue = NPC.DialogueText;
         ButtonLayout = NPC.ButtonLayout.transform;
+        audioSource = NPC.audioSource;
         StartDialogue(startNode);
     }
     public void StartDialogue(DialogueNode startNode)
@@ -44,7 +45,14 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in currentNode.dialogueText)
         {
             Dialogue.text += c.ToString();
+            if (!char.IsWhiteSpace(c))
+            {
+                audioSource.time = 0f;
+                audioSource.pitch = UnityEngine.Random.Range(0.5f, 1f);
+                audioSource.Play();
+            }
             yield return new WaitForSeconds(textSpeed);
+            //audioSource.Stop();
         }
         if (currentNode.choices.Length == 0)
         {
